@@ -1,0 +1,237 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:focus {
+	outline: none;
+}
+
+body {
+	background-color: grey;
+	font-family: "Ubuntu", sans-serif;
+}
+
+main {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	height: 100vh;
+	margin: 0 auto;
+}
+
+/* Input Section */
+
+.input {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-height: 9rem;
+	border-left: 0.063rem solid grey;
+	border-right: 0.063rem solid grey;
+	position: relative;
+}
+
+.input-textarea {
+	resize: none;
+	height: 4rem;
+	width: 97%;
+	font-family: "Ubuntu", sans-serif;
+	margin-top: 0.5rem;
+	border-radius: 0.31rem;
+	border: 0.063rem solid grey;
+}
+
+.submit {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	padding: 1rem 0rem;
+	width: 100%;
+	margin-right: 2rem;
+	button {
+		color: white;
+		background-color: grey;
+		border: none;
+		border-radius: 0.125rem;
+		padding: 0.2rem;
+		cursor: pointer;
+	}
+	input {
+		width: 12%;
+		min-width: 3.5rem;
+		border-width: 0.06rem;
+		border-radius: 0.125rem;
+		margin-right: 0.125rem;
+		padding: 0.2rem;
+	}
+	h3 {
+		color: rgb(253, 78, 78);
+		font-size: 0.9rem;
+		margin-right: 1rem;
+		visibility: hidden;
+	}
+	ion-icon {
+		position: absolute;
+		left: 2rem;
+		font-size: 1.2rem;
+		cursor: pointer;
+	}
+}
+
+.category-input {
+	min-width: 6.1rem !important;
+}
+
+/* End of Input Section */
+
+/* Entries Section */
+
+.entries-container {
+	display: flex;
+	justify-content: center;
+}
+
+.entry-text {
+	resize: none;
+	color: black;
+	height: 4rem;
+	width: 99%;
+	font-size: 1rem;
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 100;
+	margin-left: 0.1rem;
+	border: none;
+	padding: 0 0.6rem;
+	cursor: text;
+}
+
+.entries {
+	background-color: white;
+	width: 100%;
+	text-align: left;
+	border: 0.063rem solid grey;
+	li {
+		text-decoration: none;
+		list-style: none;
+		padding: 1rem 0rem;
+		border-bottom: 0.063rem solid grey;
+		h3 {
+			font-size: 1rem;
+			margin-bottom: 0.5rem;
+			margin-right: 2rem;
+			text-align: end;
+		}
+		div {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			margin-top: 0.31rem;
+			h4 {
+				text-align: end;
+				margin: 0.5rem 1rem 0 0;
+			}
+			h5 {
+				margin: 0.5rem 0 0 0.5rem;
+			}
+			p {
+				font-size: 1.3rem;
+				font-family: "Brush Script MT", cursive;
+				margin: 0.5rem 0 0 0.5rem;
+			}
+		}
+	}
+}
+
+.border {
+	border: 0.031rem solid grey;
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	width: 9rem;
+}
+
+.delete-btn,
+.save-btn,
+.edit-btn {
+	color: white;
+	background-color: grey;
+	border: none;
+	border-radius: 0.313rem;
+	padding: 0.3rem;
+	cursor: pointer;
+}
+
+.save-btn {
+	visibility: hidden;
+}
+
+.visible {
+	visibility: visible;
+}
+
+.edited-text {
+	width: 3rem;
+}
+
+/* End of Entries Section */
+
+@media (max-width: 1220px) {
+	main {
+		width: 60%;
+	}
+}
+
+@media (max-width: 888px) {
+	main {
+		width: 90%;
+	}
+}
+
+@media (max-width: 550px) {
+	main {
+		width: 100%;
+	}
+	.input-textarea {
+		font-size: 0.9rem;
+	}
+	.submit {
+		button {
+			font-size: 0.7rem;
+		}
+		input {
+			font-size: 0.7rem;
+		}
+		h3 {
+			font-size: 0.7rem;
+		}
+		ion-icon {
+			left: 0.5rem;
+		}
+	}
+	.entry-text {
+		font-size: 0.8rem;
+	}
+	.entries {
+		li {
+			h3 {
+				font-size: 0.6rem;
+			}
+			div {
+				font-size: 0.6rem;
+				button {
+					font-size: 0.6rem;
+				}
+				p {
+					font-size: 0.7rem;
+					margin: 0.5rem 0 0 0.5rem;
+				}
+			}
+		}
+	}
+}

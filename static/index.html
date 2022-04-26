@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet" />
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+		<title>forum</title>
+	</head>
+	<body>
+
+		<main>
+			<!-- input section -->
+			<div class="input">
+				<textarea class="input-textarea" oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="55"></textarea>
+				<div class="submit">
+					<ion-icon name="refresh"></ion-icon>
+					<h3>please enter a name</h3>
+					<input class="category-input" type="text" placeholder="(optional) topic" />
+					<input class="name-input" type="text" placeholder="name" />
+					<button class="submit-btn">Submit</button>
+				</div>
+			</div>
+			<!-- entries section -->
+			<div class="entries-container">
+				<ul class="entries"></ul>
+			</div>
+		</main>
+
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
