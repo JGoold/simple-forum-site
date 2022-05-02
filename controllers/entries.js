@@ -1,3 +1,6 @@
+// all functions used in the routes here
+
+// import schema
 const Entry = require("../models/Entry")
 const asyncWrapper = require("../middleware/async")
 const { createCustomError } = require("../errors/custom-error")
@@ -42,4 +45,5 @@ const deleteEntry = asyncWrapper(async (req, res) => {
 	res.status(200).json({ entry })
 })
 
+// export each function to be used in routes
 module.exports = { getEntries, createEntry, getSingleEntry, updateEntry, deleteEntry }
