@@ -1,3 +1,5 @@
+// all routes and their assigned functions here
+
 const express = require("express")
 const router = express.Router()
 
