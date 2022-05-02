@@ -1,5 +1,8 @@
+// Database Design
+
 const mongoose = require("mongoose")
 
+// schema here
 const EntrySchema = new mongoose.Schema({
 	textValue: {
 		type: String,
@@ -24,4 +27,5 @@ const EntrySchema = new mongoose.Schema({
 	}
 })
 
+// export the schema as a model
 module.exports = mongoose.model("Entry", EntrySchema)
