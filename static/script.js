@@ -1,3 +1,4 @@
+// set up all the necessary variables
 const submitBtn = document.querySelector(".submit-btn")
 const textInput = document.querySelector("textarea")
 const nameInput = document.querySelector(".name-input")
@@ -7,6 +8,7 @@ const errorMsg = document.querySelector(".submit h3")
 const options = { weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false }
 const refresh = document.querySelector(".submit ion-icon")
 
+// function that gets the data and displays it to the html
 async function getAndDisplay() {
 	entriesUl.innerHTML = ""
 	let {
@@ -37,6 +39,7 @@ async function getAndDisplay() {
 	})
 }
 
+// function that sets up the buttons for each entry
 function setupButtons() {
 	const saveBtn = document.querySelectorAll(".save-btn")
 	const entryText = document.querySelectorAll(".entry-text")
@@ -47,6 +50,7 @@ function setupButtons() {
 
 	const editedText = document.querySelectorAll(".edited-text")
 
+	// function that resets all button values
 	function reset() {
 		editBtn.forEach((btn, x) => {
 			editBtn[x].innerText = "Edit"
@@ -56,7 +60,7 @@ function setupButtons() {
 			saveBtn[x].disabled = true
 		})
 	}
-
+	// logic for save, edit and delete buttons
 	for (let i = 0; i < saveBtn.length; i++) {
 		saveBtn[i].addEventListener("click", async () => {
 			let textValue = entryText[i].value
@@ -64,7 +68,6 @@ function setupButtons() {
 			editedText[i].innerText = "edited"
 			reset()
 		})
-
 		editBtn[i].addEventListener("click", () => {
 			if (editBtn[i].innerText === "Cancel") {
 				reset()
@@ -77,7 +80,6 @@ function setupButtons() {
 				entryText[i].classList.add("border")
 			}
 		})
-
 		deleteBtn[i].addEventListener("click", async () => {
 			await axios.delete(`/api/${saveBtn[i].dataset.id}`)
 			li[i].remove()
@@ -85,6 +87,7 @@ function setupButtons() {
 	}
 }
 
+// event listener for the submit button, including all the necessary logic and functionality
 submitBtn.addEventListener("click", async () => {
 	submitBtn.disabled = true
 	let textValue = textInput.value
@@ -110,12 +113,14 @@ submitBtn.addEventListener("click", async () => {
 	submitBtn.disabled = false
 })
 
+// refresh the page and set up everything correctly
 refresh.addEventListener("click", async () => {
 	getAndDisplay().then(() => {
 		setupButtons()
 	})
 })
 
+// initial app setup
 document.addEventListener("DOMContentLoaded", async () => {
 	getAndDisplay().then(() => {
 		setupButtons()
