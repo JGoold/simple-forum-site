@@ -1,1 +1,1 @@
-# simple-forum-site
+This project is a forum site in which you can create, read, update and delete entries. It is connected to a MongoDB database, so any submitted entries will persist and upon refreshing will appear across clients.
