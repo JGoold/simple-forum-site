@@ -248,6 +248,7 @@ main {
   }
   .submit h3 {
     font-size: 0.7rem;
+    margin-right: 0.2rem;
   }
   .submit ion-icon {
     left: 0.5rem;
